@@ -1,0 +1,6 @@
+hhenrik@melkki:~$ tree kurssit
+kurssit
+└── ot2020
+    └── viikko1
+
+2 directories, 0 files

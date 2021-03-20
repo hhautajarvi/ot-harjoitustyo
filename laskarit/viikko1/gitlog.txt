@@ -1,0 +1,114 @@
+hhenrik@lx0-fuxi175:~/Documents/ohte/ot_viikko1$ git log --stat | cat
+commit 7a5ced3be77f563b8ea64832a47e35f17c61b065
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:50:50 2021 +0200
+
+    tehty poistoja ja muutoksia
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 22afc36743d94dad47f2b1a47744567dbf5a7e74
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:44:36 2021 +0200
+
+    lisätty kansio ja tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1f675a1801eccb8566df58a630b4b00119e6acfd
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:34:00 2021 +0200
+
+    tehty muutoksia add -p -vivulla
+
+ eka.txt    | 61 +++++++++++++++++++++++++++++++++++++++++++++----------------
+ kolmas.txt |  2 +-
+ 2 files changed, 46 insertions(+), 17 deletions(-)
+
+commit f6141c76b0d1530912cc696d69fed71ef6a03740
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:30:28 2021 +0200
+
+    muutettu tiedoston nimi
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 256bb8ed89ed5548f5bdaa4e970a98a621267e5e
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:29:06 2021 +0200
+
+    poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 9cd938f7ea1ff540c83bb097d445774bef766b58
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:26:18 2021 +0200
+
+    tehty muutoksia tiedostoon
+
+ tiedosto.txt | 69 +++++++++++++++++++++++++++++++++++-------------------------
+ 1 file changed, 40 insertions(+), 29 deletions(-)
+
+commit b9888f6c0a6e448e4dc4fab4111460db29fd56dc
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:24:28 2021 +0200
+
+    lisätty paljon tekstiä tiedostoon
+
+ tiedosto.txt | 582 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 581 insertions(+), 1 deletion(-)
+
+commit ded19ba1923be205f0d7b3e28fc0d30a03f6f1a2
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:21:13 2021 +0200
+
+    lisätty kansio
+
+ stuff/jokintiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 45a4febc376624ec6750396a1557bb51a6130c15
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:20:15 2021 +0200
+
+    lisää muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 5865af9c6b26477fcb9c6636edbef5f02cca8c73
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 21:19:01 2021 +0200
+
+    lisätty kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 48ad902a53461deb32fb157b2ebec92226562d4b
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 20:23:37 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 43ad8d7f75c40f4ebae961b13c58b3663a95d18a
+Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
+Date:   Sat Mar 20 20:21:38 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
