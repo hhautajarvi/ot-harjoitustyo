@@ -24,7 +24,7 @@ commit 1f675a1801eccb8566df58a630b4b00119e6acfd
 Author: Henrik Hautajärvi <henrik.hautajarvi@gmail.com>
 Date:   Sat Mar 20 21:34:00 2021 +0200
 
-    tehty muutoksia add -p -vivulla
+    tehty muutoksia -p -vivulla
 
  eka.txt    | 61 +++++++++++++++++++++++++++++++++++++++++++++----------------
  kolmas.txt |  2 +-
