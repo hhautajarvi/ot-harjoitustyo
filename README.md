@@ -1,7 +1,7 @@
 # Ohjelmistotuotanto harjoitustyö
 
 Tälle sivulle tulee Helsingin yliopiston ohjelmistotuotanto-kurssin harjoitustyö, sekä laskuharjoitustehtävien vastauksia.
-Tässä voi myös *harjoitella* markdown-syntaksin **käyttöä**.
+Tässä voi myös *harjoitella* markdown-syntaksin **käyttöä** __eri *tavoin*__.
 
 ## Tehtävät
 
