@@ -14,4 +14,5 @@ Tässä voi myös *harjoitella* markdown-syntaksin **käyttöä** _eri **tavoin*
 ## Dokumentaatio
 
 [Vaativuusmäärittely](https://github.com/hhautajarvi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
 [Työaikakirjanpito](https://github.com/hhautajarvi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
