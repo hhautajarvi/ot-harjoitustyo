@@ -1,9 +1,9 @@
-import characters
+from characters import Character
 from users import Users, Userlist
 
 class Interface:
     def __init__(self):
-        Userlist()
+        self.ul = Userlist() 
         self.user_select()
 
     def user_select(self):
@@ -15,29 +15,28 @@ class Interface:
             quit()
         if command == "1":
             name = input("Anna käyttäjälle nimi: ")
-            current_user = Userlist.make_user(name)
-            self.start(current_user)
+            self.current_user = self.ul.make_user(name)
+            self.start()
         if command == "2":
-            user_choice = Userlist.give_userlist()
+            user_choice = self.ul.give_userlist()
             for i in range(len(user_choice)-1):
                 print(f"{user_choice[0]}: {i}")
             choice = input("Valitse käyttäjä kirjoittamalla haluamasi käyttäjän numero: ")
-            self.start(user_choice[choice])
+            self.current_user = user_choice[choice]
+            self.start()
 
-    def start(self, user):
+    def start(self):
         self.instructions()
         while True:
             command = input("Anna komento: ")
             if command == "0":
                 break
             if command == "1":
-                new_character = characters.make_character()
-                user.add.character(new_character)
+                self.build_character()
             if command == "2":
                 pass
             if command == "3":
                 pass
-
 
     def instructions(self):
         print("Lopeta: 0")
@@ -45,5 +44,24 @@ class Interface:
         print("Pelaa ja muokkaa tekemääsi hahmoa: 2")
         print("Tee uusi hahmoluokka: 3")
 
-
-Interface()
+    def build_character(self):
+        name = input("Anna hahmolle nimi: ")
+        new_character = Character(name, self.current_user)
+        dw_class = input("Valitse luokka: 1: Bard, 2: Barbarian, 3: Immolator, 4: Wizard, 5: Thief, 6: Ranger ")
+        new_character.choose_class(dw_class)
+        print("Valitse hahmon taitopisteet. Mahdolliset taitotasot, valitse yksi jokaista: 16, 15, 13, 12, 9, 8")
+        strength = input("Strength: ")
+        dexterity = input("Dexterity: ")
+        constitution = input("Constitution: ")
+        intelligence = input("Intelligence: ")
+        wisdom = input("Wisdom: ")
+        charisma = input("Charisma: ")
+        statlist = [strength, dexterity, constitution, intelligence, wisdom, charisma]
+        new_character.choose_stats(statlist)
+        backstory = input("Kerro hahmon taustatarina: ")
+        new_character.choose_backstory(backstory)
+        looks = input("Kuvaile hahmon ulkonäköä: ")
+        new_character.choose_looks(looks)
+        image = input("Anna hahmon kuvatiedoston osoite: ")
+        new_character.choose_image(image)
+        self.current_user.add_character(new_character)

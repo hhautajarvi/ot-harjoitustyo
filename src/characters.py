@@ -1,6 +1,5 @@
 class Character:
     def __init__(self, name: str, user):
-
         self.name = name
         self.dwclass = None
         self.alignment = None
