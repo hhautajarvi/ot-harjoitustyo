@@ -10,8 +10,8 @@ class CharacterRepository:
         with open(self.file) as jsonfile:
             file = jsonfile.read()
         data = json.loads(file)
-        #if data[user.name] not in data: 
-        data[user.name] = []
+        if data[user.name] not in data: 
+            data[user.name] = []
         data[user.name].append({
             "name": character.name,
             "dwclass": character.dwclass,

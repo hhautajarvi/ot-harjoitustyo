@@ -1,6 +1,6 @@
 from characters import Character
 from users import Users, Userlist
-from characterrepository import CharacterRepository
+from character_repository import CharacterRepository
 
 class Interface:
     def __init__(self):
@@ -68,5 +68,5 @@ class Interface:
         image = input("Anna hahmon kuvatiedoston osoite: ")
         new_character.choose_image(image)
         self.current_user.add_character(new_character)
-        save = CharacterRepository("src/characterfile.json")
-        save.save_data(new_character, self.current_user)
+        #save = CharacterRepository("src/characterfile.json")
+        #save.save_data(new_character, self.current_user)

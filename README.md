@@ -8,7 +8,9 @@ Tälle sivulle tulee Helsingin yliopiston ohjelmistotuotanto-kurssin harjoitusty
 
 [Työaikakirjanpito](https://github.com/hhautajarvi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-Toimivuus testattu pythonin versiolla 3.8.5
+## Python versiot
+
+Toimivuus testattu Pythonin versiolla 3.8.5
 
 ## Ohjelman tilanne
 
