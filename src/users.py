@@ -1,10 +1,13 @@
+#from characterrepository import CharacterRepository
+from characters import Character
+
 class Users:
     def __init__(self, name):
         self.name = name
-        self.characterlist = []
+        self.characterlist = {}
 
-    def add_character(self, Character):
-        self.characterlist.append(Character)
+    def add_character(self, character: Character):
+        self.characterlist[character.name] = character
 
     def give_characterlist(self):
         return self.characterlist

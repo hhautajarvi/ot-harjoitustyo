@@ -1,5 +1,6 @@
 from characters import Character
 from users import Users, Userlist
+from characterrepository import CharacterRepository
 
 class Interface:
     def __init__(self):
@@ -25,9 +26,9 @@ class Interface:
             self.current_user = user_choice[choice]
             self.start()
 
-    def start(self):
-        self.instructions()
+    def start(self):        
         while True:
+            self.instructions()
             command = input("Anna komento: ")
             if command == "0":
                 break
@@ -49,6 +50,8 @@ class Interface:
         new_character = Character(name, self.current_user)
         dw_class = input("Valitse luokka: 1: Bard, 2: Barbarian, 3: Immolator, 4: Wizard, 5: Thief, 6: Ranger ")
         new_character.choose_class(dw_class)
+        alignment = input("Valitse eettinen suuntaus. 1: Neutral, 2: Good, 3: Chaotic, 4: Evil, 5: Lawful ")
+        new_character.choose_alignment(alignment)
         print("Valitse hahmon taitopisteet. Mahdolliset taitotasot, valitse yksi jokaista: 16, 15, 13, 12, 9, 8")
         strength = input("Strength: ")
         dexterity = input("Dexterity: ")
@@ -65,3 +68,5 @@ class Interface:
         image = input("Anna hahmon kuvatiedoston osoite: ")
         new_character.choose_image(image)
         self.current_user.add_character(new_character)
+        save = CharacterRepository("src/characterfile.json")
+        save.save_data(new_character, self.current_user)

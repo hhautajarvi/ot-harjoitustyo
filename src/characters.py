@@ -1,5 +1,5 @@
 class Character:
-    def __init__(self, name: str, user):
+    def __init__(self, name: str):
         self.name = name
         self.dwclass = None
         self.alignment = None
@@ -12,7 +12,7 @@ class Character:
     def choose_class(self, dw_class):
         self.dwclass = dw_class
 
-    def choose_alignment(self, alignment: tuple):
+    def choose_alignment(self, alignment: int):
         self.alignment = alignment
 
     def choose_race(self, race: int):
@@ -25,6 +25,9 @@ class Character:
         self.stats["intelligence"] = statlist[3]
         self.stats["wisdom"] = statlist[4]
         self.stats["charisma"] = statlist[5]
+
+    def load_stats(self, stats: dict):
+        self.stats = stats
     
     def choose_backstory(self, story: str):
         self.backstory = story
