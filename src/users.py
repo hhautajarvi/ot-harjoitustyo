@@ -1,4 +1,3 @@
-#from characterrepository import CharacterRepository
 from characters import Character
 
 class Users:

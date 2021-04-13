@@ -24,13 +24,7 @@ Projektissa toimii tällä hetkellä käyttäjän ja hahmon luonti tekstikäytt�
 poetry install
 ```
 
-2. Suorita vaadittavat alustustoimenpiteet komennolla:
-
-```bash
-poetry run invoke build
-```
-
-3. Käynnistä sovellus komennolla:
+2. Käynnistä sovellus komennolla:
 
 ```bash
 poetry run invoke start

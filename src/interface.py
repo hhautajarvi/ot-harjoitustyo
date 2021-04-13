@@ -47,7 +47,7 @@ class Interface:
 
     def build_character(self):
         name = input("Anna hahmolle nimi: ")
-        new_character = Character(name, self.current_user)
+        new_character = Character(name)
         dw_class = input("Valitse luokka: 1: Bard, 2: Barbarian, 3: Immolator, 4: Wizard, 5: Thief, 6: Ranger ")
         new_character.choose_class(dw_class)
         alignment = input("Valitse eettinen suuntaus. 1: Neutral, 2: Good, 3: Chaotic, 4: Evil, 5: Lawful ")
