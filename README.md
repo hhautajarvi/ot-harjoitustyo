@@ -2,6 +2,12 @@
 
 Tälle sivulle tulee Helsingin yliopiston ohjelmistotuotanto-kurssin harjoitustyö, sekä laskuharjoitustehtävien vastauksia.
 
+# Dungeon World -roolipelin hahmolomake
+
+Ohjelman avulla on mahdollista luoda omia hahmoja Dungeon World -roolipeliin ja pitää kirjaa niiden taidoista.
+
+[Lisätietoa Dungeon World -pelistä](https://dungeon-world.com/)
+
 ## Dokumentaatio
 
 [Vaativuusmäärittely](https://github.com/hhautajarvi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
@@ -10,11 +16,11 @@ Tälle sivulle tulee Helsingin yliopiston ohjelmistotuotanto-kurssin harjoitusty
 
 ## Python versiot
 
-Toimivuus testattu Pythonin versiolla 3.8.5
+Toimivuus testattu Pythonin versiolla 3.8.5. Versiolla 3.6.9 testattaessa coverage ei toiminut.
 
 ## Ohjelman tilanne
 
-Projektissa toimii tällä hetkellä käyttäjän ja hahmon luonti tekstikäyttöliittymässä.
+Projektissa toimii tällä hetkellä käyttäjän ja hahmon luonti tekstikäyttöliittymässä. Hahmon tallennus on vielä kesken ja kommentoitu pois käyttöliittymäkoodista. Myöskään muut vanhan hahmon pelaaminen, uuden hahmoluokan luominen tai vanhan käyttäjän valinta eivät vielä toimi.
 
 ## Asennus
 
@@ -22,12 +28,6 @@ Projektissa toimii tällä hetkellä käyttäjän ja hahmon luonti tekstikäytt�
 
 ```bash
 poetry install
-```
-
-2. Käynnistä sovellus komennolla:
-
-```bash
-poetry run invoke start
 ```
 
 ## Komentorivitoiminnot
