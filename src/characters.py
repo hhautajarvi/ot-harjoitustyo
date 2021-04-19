@@ -5,7 +5,8 @@ class Character:
         self.alignment = None
         self.race = None
         self.image = None
-        self.stats = {"strength": None, "dexterity": None, "constitution": None, "intelligence": None, "wisdom": None, "charisma": None}
+        self.stats = {"strength": None, "dexterity": None, "constitution": None,
+                      "intelligence": None, "wisdom": None, "charisma": None}
         self.backstory = None
         self.looks = None
 
@@ -28,7 +29,7 @@ class Character:
 
     def load_stats(self, stats: dict):
         self.stats = stats
-    
+
     def choose_backstory(self, story: str):
         self.backstory = story
 
@@ -37,4 +38,3 @@ class Character:
 
     def choose_image(self, image_address):
         self.image = image_address
-

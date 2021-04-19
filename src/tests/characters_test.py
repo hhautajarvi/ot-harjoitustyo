@@ -1,6 +1,7 @@
 import unittest
 from characters import Character
 
+
 class TestCharacter(unittest.TestCase):
     def setUp(self):
         self.char = Character("testname")
@@ -26,7 +27,8 @@ class TestCharacter(unittest.TestCase):
         self.assertEqual(self.char.stats["charisma"], 8)
 
     def test_load_stats(self):
-        stats = {"strength": 16, "dexterity": 15, "constitution": 13, "intelligence": 12, "wisdom": 9, "charisma": 8}
+        stats = {"strength": 16, "dexterity": 15, "constitution": 13,
+                 "intelligence": 12, "wisdom": 9, "charisma": 8}
         self.char.load_stats(stats)
         self.assertEqual(self.char.stats["strength"], 16)
         self.assertEqual(self.char.stats["dexterity"], 15)

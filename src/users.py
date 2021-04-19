@@ -1,5 +1,6 @@
 from characters import Character
 
+
 class Users:
     def __init__(self, name):
         self.name = name
@@ -11,9 +12,10 @@ class Users:
     def give_characterlist(self):
         return self.characterlist
 
+
 class Userlist:
     def __init__(self):
-        self.userlist = []    
+        self.userlist = []
 
     def make_user(self, name):
         new_user = Users(name)

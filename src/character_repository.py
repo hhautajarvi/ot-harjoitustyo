@@ -1,6 +1,7 @@
+import json
 from characters import Character
 from users import Users
-import json
+
 
 class CharacterRepository:
     def __init__(self, file):
@@ -10,7 +11,7 @@ class CharacterRepository:
         with open(self.file) as jsonfile:
             file = jsonfile.read()
         data = json.loads(file)
-        if data[user.name] not in data: 
+        if data[user.name] not in data:
             data[user.name] = []
         data[user.name].append({
             "name": character.name,
@@ -28,7 +29,7 @@ class CharacterRepository:
     def read_data(self, user: Users):
         with open(self.file, "r") as jsonfile:
             for character in jsonfile[user.name]:
-                new_character = Character(character["name"], user.name)
+                new_character = Character(character["name"])
                 new_character.choose_class(character["dwclass"])
                 new_character.choose_alignment(character["alignment"])
                 new_character.choose_race(character["race"])

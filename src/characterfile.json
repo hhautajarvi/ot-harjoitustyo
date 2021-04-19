@@ -1,0 +1,15 @@
+[
+{   
+    "kalle":[{
+    "name": "character.name",
+    "dwclass": "character.dwclass",
+    "alignment": "character.alignment",
+    "race": "character.race",
+    "image": "character.image",
+    "stats": "character.stats",
+    "backstory": "character.backstory",
+    "looks": "character.looks"
+    }
+    ]
+}
+]
