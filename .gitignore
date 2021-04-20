@@ -9,3 +9,4 @@
 /src/tests/__pycache__/
 .coverage
 /htmlcov
+*__pycache__*
