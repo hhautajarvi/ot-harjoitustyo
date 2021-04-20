@@ -50,30 +50,66 @@ class Interface:
 
     def build_character(self):
         name = input("Anna hahmolle nimi: ")
-        new_character = Character(name)
-        dw_class = input("Valitse luokka: 1: Bard, "
-                         "2: Barbarian, 3: Immolator, 4: Wizard, 5: Thief, 6: Ranger ")
-        new_character.choose_class(dw_class)
-        alignment = input("Valitse eettinen suuntaus. "
-                          "1: Neutral, 2: Good, 3: Chaotic, 4: Evil, 5: Lawful ")
-        new_character.choose_alignment(alignment)
-        print("Valitse hahmon taitopisteet. Mahdolliset taitotasot, "
-              "valitse yksi jokaista: 16, 15, 13, 12, 9, 8")
-        strength = input("Strength: ")
-        dexterity = input("Dexterity: ")
-        constitution = input("Constitution: ")
-        intelligence = input("Intelligence: ")
-        wisdom = input("Wisdom: ")
-        charisma = input("Charisma: ")
-        statlist = [strength, dexterity, constitution,
-                    intelligence, wisdom, charisma]
-        new_character.choose_stats(statlist)
+        if len(name) > 20 or len(name) < 1:
+            while len(name) > 20 or len(name) < 1:
+                name = input("Nimen pitää olla 1-20 merkkiä pitkä: ")
+        self.new_character = Character(name)
+        self.class_pick()
+        self.alignment_pick()
+        self.stats_pick()
         backstory = input("Kerro hahmon taustatarina: ")
-        new_character.choose_backstory(backstory)
+        self.new_character.choose_backstory(backstory)
         looks = input("Kuvaile hahmon ulkonäköä: ")
-        new_character.choose_looks(looks)
+        self.new_character.choose_looks(looks)
         image = input("Anna hahmon kuvatiedoston osoite: ")
-        new_character.choose_image(image)
-        self.current_user.add_character(new_character)
-        #save = CharacterRepository("src/characterfile.json")
-        #save.save_data(new_character, self.current_user)
+        self.new_character.choose_image(image)
+        self.current_user.add_character(self.new_character)
+        save = CharacterRepository("src/characterfile.json")
+        save.save_data(self.new_character, self.current_user)
+
+    def class_pick(self):
+        while True:
+            try:
+                dw_class = int(input("Valitse luokka: 1: Bard, " \
+                    "2: Barbarian, 3: Immolator, 4: Wizard, 5: Thief, 6: Ranger "))
+                if dw_class < 7 and dw_class > 0:
+                    self.new_character.choose_class(dw_class)
+                    break
+            except:
+                print("Anna kokonaisluku 1-6")
+
+    def alignment_pick(self):
+        while True:
+            try:
+                alignment = int(input("Valitse eettinen suuntaus. "
+                                "1: Neutral, 2: Good, 3: Chaotic, 4: Evil, 5: Lawful "))
+                if alignment < 6 and alignment > 0:
+                    self.new_character.choose_alignment(alignment)
+                    break
+            except:
+                print("Anna kokonaisluku 1-6")
+
+    def stats_pick(self):
+        while True:
+            stats = [16, 15, 13, 12, 9, 8]
+            try:
+                print("Valitse hahmon taitopisteet. Mahdolliset taitotasot, "
+              "valitse yksi jokaista: 16, 15, 13, 12, 9, 8")
+                strength = int(input("Strength: "))
+                dexterity = int(input("Dexterity: "))
+                constitution = int(input("Constitution: "))
+                intelligence = int(input("Intelligence: "))
+                wisdom = int(input("Wisdom: "))
+                charisma = int(input("Charisma: "))
+                statlist = [strength, dexterity, constitution,
+                            intelligence, wisdom, charisma]
+                for stat in statlist:
+                    if stat not in stats:       
+                        continue
+                if sum(statlist) == sum(stats):
+                    self.new_character.choose_stats(statlist)
+                    break
+                else:
+                    print("Annetut arvot eivät täsmää")
+            except:
+                print("Anna kokonaisluku")
