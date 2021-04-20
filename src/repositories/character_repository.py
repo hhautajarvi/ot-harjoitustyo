@@ -11,7 +11,8 @@ class CharacterRepository:
         with open(self.file) as jsonfile:
             file = jsonfile.read()
         data = json.loads(file)
-        data[user.name] = []
+        if user.name not in data.keys():
+            data[user.name] = []
         data[user.name].append({
             "name": character.name,
             "dwclass": character.dwclass,
@@ -26,7 +27,9 @@ class CharacterRepository:
             json.dump(data, jsonfile)
 
     def read_data(self, user: Users):
-        with open(self.file, "r") as jsonfile:
+        with open(self.file, "r") as data:
+            file = data.read()
+            jsonfile = json.loads(file)
             for character in jsonfile[user.name]:
                 new_character = Character(character["name"])
                 new_character.choose_class(character["dwclass"])

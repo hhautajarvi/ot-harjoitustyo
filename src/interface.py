@@ -1,12 +1,13 @@
 import sys
 from characters import Character
-from users import Userlist
-from character_repository import CharacterRepository
+from users import Userlist, Users
+from repositories.character_repository import CharacterRepository
 
 
 class Interface:
     def __init__(self):
         self.user_list = Userlist()
+        self.character_load = CharacterRepository("src/data/characterfile.json")
         self.user_select()
 
     def user_select(self):
@@ -22,11 +23,12 @@ class Interface:
             self.start()
         if command == "2":
             user_choice = self.user_list.give_userlist()
-            for i in range(len(user_choice)-1):
-                print(f"{user_choice[0]}: {i}")
-            choice = input(
-                "Valitse käyttäjä kirjoittamalla haluamasi käyttäjän numero: ")
-            self.current_user = user_choice[choice]
+            for i in range(len(user_choice)):
+                print(f"{user_choice[i]}: {i}")
+            choice = int(input(
+                "Valitse käyttäjä kirjoittamalla haluamasi käyttäjän numero: "))
+            self.current_user = Users(user_choice[choice])
+            self.character_load.read_data(self.current_user)
             self.start()
 
     def start(self):
@@ -56,6 +58,7 @@ class Interface:
         self.new_character = Character(name)
         self.class_pick()
         self.alignment_pick()
+        self.race_pick()
         self.stats_pick()
         backstory = input("Kerro hahmon taustatarina: ")
         self.new_character.choose_backstory(backstory)
@@ -63,16 +66,15 @@ class Interface:
         self.new_character.choose_looks(looks)
         image = input("Anna hahmon kuvatiedoston osoite: ")
         self.new_character.choose_image(image)
-        self.current_user.add_character(self.new_character)
-        save = CharacterRepository("src/characterfile.json")
-        save.save_data(self.new_character, self.current_user)
+        self.current_user.add_character(self.new_character)        
+        self.character_load.save_data(self.new_character, self.current_user)
 
     def class_pick(self):
         while True:
             try:
                 dw_class = int(input("Valitse luokka: 1: Bard, " \
                     "2: Barbarian, 3: Immolator, 4: Wizard, 5: Thief, 6: Ranger "))
-                if dw_class < 7 and dw_class > 0:
+                if 0 < dw_class < 7:
                     self.new_character.choose_class(dw_class)
                     break
             except:
@@ -83,8 +85,19 @@ class Interface:
             try:
                 alignment = int(input("Valitse eettinen suuntaus. "
                                 "1: Neutral, 2: Good, 3: Chaotic, 4: Evil, 5: Lawful "))
-                if alignment < 6 and alignment > 0:
+                if 0 < alignment < 6:
                     self.new_character.choose_alignment(alignment)
+                    break
+            except:
+                print("Anna kokonaisluku 1-5")
+
+    def race_pick(self):
+        while True:
+            try:
+                race = int(input("Valitse rotu. 1: Human, 2: Dwarf, "
+                "3: Elf, 4: Halfling 5: Salamander 6: Outsider "))
+                if 0 < race < 7:
+                    self.new_character.choose_race(race)
                     break
             except:
                 print("Anna kokonaisluku 1-6")
@@ -104,12 +117,11 @@ class Interface:
                 statlist = [strength, dexterity, constitution,
                             intelligence, wisdom, charisma]
                 for stat in statlist:
-                    if stat not in stats:       
+                    if stat not in stats:
                         continue
                 if sum(statlist) == sum(stats):
                     self.new_character.choose_stats(statlist)
                     break
-                else:
-                    print("Annetut arvot eivät täsmää")
+                print("Annetut arvot eivät täsmää")
             except:
                 print("Anna kokonaisluku")
