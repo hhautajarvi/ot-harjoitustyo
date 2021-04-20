@@ -12,15 +12,20 @@ Sovelluksen avulla hahmon kykyjä voi pelin aikana päivittää ja hahmon liikke
 
 ### Aloitusruutu
 
-* Käyttäjä voi luoda uudelle hahmolleen uniikin nimen jonka jälkeen siirrytään täyttämään hahmon kykyjä
+* Käyttäjä voi tehtdä uuden käyttäjän tai valita vanhan käyttäjän (tehty)
+
+### Hahmon valinta
+
+* Käyttäjä voi luoda uudelle hahmolleen uniikin nimen jonka jälkeen siirrytään täyttämään hahmon kykyjä (tehty (ei tarkasta vielä onko uniikki))
 * Käyttäjä voi valita listasta jonkin jo tekemistään hahmoista ja päivittää sen kykyjä pelin edessä 
 * Käyttäjä voi luoda uuden hahmoluokan
 
 ### Uuden hahmon luominen
 
-* Käyttäjä voi valita tekeekö hahmon valmiin hahmoluokan vai oman mukautetun luokan pohjalle
-* Hahmon tekemisessä hahmolle valitaan eettinen suuntaus, rotu ja kuuden pääkyvyn tasot
-* Hahmolle voi lisätä halutessaan taustatarinan, kuvauksen ulkonäöstä ja kuvan tiedostona
+* Käyttäjä voi valita tekeekö hahmon valmiin hahmoluokan vai oman mukautetun luokan pohjalle (tehty)
+* Hahmon tekemisessä hahmolle valitaan eettinen suuntaus, rotu ja kuuden pääkyvyn tasot (tehty)
+* Hahmolle voi lisätä halutessaan taustatarinan, kuvauksen ulkonäöstä ja kuvan tiedostona (tehty)
+* Hahmot tallennetaan tiedostoon (tehty)
 
 ### Uuden luokan luominen
 

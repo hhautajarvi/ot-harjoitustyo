@@ -14,13 +14,15 @@ Ohjelman avulla on mahdollista luoda omia hahmoja Dungeon World -roolipeliin ja 
 
 [Työaikakirjanpito](https://github.com/hhautajarvi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
+[Arkkitehtuurikuvaus](https://github.com/hhautajarvi/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Python versiot
 
 Toimivuus testattu Pythonin versiolla 3.8.5. Versiolla 3.6.9 testattaessa coverage ei toiminut.
 
 ## Ohjelman tilanne
 
-Projektissa toimii tällä hetkellä käyttäjän ja hahmon luonti tekstikäyttöliittymässä. Hahmon tallennus on vielä kesken ja kommentoitu pois käyttöliittymäkoodista. Myöskään muut vanhan hahmon pelaaminen, uuden hahmoluokan luominen tai vanhan käyttäjän valinta eivät vielä toimi.
+Projektissa toimii tällä hetkellä käyttäjän ja hahmon luonti tekstikäyttöliittymässä ja ne voi tallentaa olemassaoleviin .json-tiedostoihin. Vanhan hahmon pelaaminen, uuden hahmoluokan luominen tai vanhan käyttäjän valinta eivät vielä toimi.
 
 ## Asennus
 
@@ -54,4 +56,12 @@ Testikattavuusraportin voi generoida komennolla:
 
 ```bash
 poetry run invoke coverage-report
+```
+
+### Pylint
+
+Pylintin määrittelemät tarkistukset voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
 ```
