@@ -17,6 +17,10 @@ class TestCharacter(unittest.TestCase):
         self.char.choose_alignment(2)
         self.assertEqual(self.char.alignment, 2)
 
+    def test_choose_race(self):
+        self.char.choose_race(3)
+        self.assertEqual(self.char.race, 3)
+
     def test_choose_stats(self):
         self.char.choose_stats([16, 15, 13, 12, 9, 8])
         self.assertEqual(self.char.stats["strength"], 16)

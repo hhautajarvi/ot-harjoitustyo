@@ -1,4 +1,4 @@
-from interface import Interface
+from ui.interface import Interface
 
 
 def main():
