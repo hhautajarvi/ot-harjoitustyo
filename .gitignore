@@ -9,4 +9,5 @@
 /src/tests/__pycache__/
 .coverage
 /htmlcov
-*__pycache__*
+__pycache__
+/src/ui/__pycache__/
